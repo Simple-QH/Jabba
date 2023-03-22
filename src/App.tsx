@@ -33,7 +33,7 @@ import {
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import { history } from "./history";
-
+import { PhillyWidgetProvider } from "./providers/PhillyWidgetProvider";
 const App: React.FC = () => {
   const [iModelId, setIModelId] = useState(process.env.IMJS_IMODEL_ID);
   const [iTwinId, setITwinId] = useState(process.env.IMJS_ITWIN_ID);
@@ -130,7 +130,6 @@ const App: React.FC = () => {
       viewPort.view.setStandardRotation(StandardViewId.Iso);
     });
   }, []);
-
   const viewCreatorOptions = useMemo(
     () => ({ viewportConfigurer: viewConfiguration }),
     [viewConfiguration]
@@ -171,10 +170,11 @@ const App: React.FC = () => {
             enableCopyingPropertyText: true,
           }),
           new MeasureToolsUiItemsProvider(),
+          new PhillyWidgetProvider(),
         ]}
       />
     </div>
   );
 };
 
-export default App;
+export default App
