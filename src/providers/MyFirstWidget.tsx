@@ -4,8 +4,6 @@ import RealityDataApi from "./RealityDataApi";
 import "./MyFirstWidget.css";
 import { Button, ToggleSwitch } from "@itwin/itwinui-react";
 import { ContextRealityModelProps } from "@itwin/core-common";
-import { extractHilitedVolumeClassifierCommands } from "@itwin/core-frontend/lib/cjs/render/webgl/DrawCommand";
-import { BrowserAuthorizationLoggerCategory } from "@itwin/browser-authorization";
 
 export const MyFirstWidget: React.FC = () => {
   const viewport = useActiveViewport();
@@ -39,7 +37,7 @@ export const MyFirstWidget: React.FC = () => {
   const buttonClick = async () => {alert("Grimmjow Jaegerjaquez in.!");
 setListOfThings([...listOfThings,"DannyPhantom!!"])
 }
-const thingList = listOfThings.map((thing: string) => <li>{thing}</li>);
+// const thingList = listOfThings.map((thing: string) => <li>{thing}</li>);
   return (
     <div>
       This is my first widget
